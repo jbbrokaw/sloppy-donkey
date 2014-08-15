@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+    </title>
+  </head>
+  <body>
+    <header>
+    </header>
+    <nav>
+      <ul>
+        <li>Home</li>
+        <li><a href="test.html?show=test">Upcoming Shows</a></li>
+        <li>Merch</li>
+        <li>About Us</li>
+      </ul>
+    </nav>
+    <article>
+    </article>
+    <aside>
+    </aside>
+    <footer>
+    </footer>
+    <script type="text/javascript">
+      var passedString = window.location.search;
+      var show = passedString.split("=")[1];
+      if (show === 'test') {
+        var newLi = document.createElement('li');
+        var newText = document.createTextNode(show);
+        newLi.appendChild(newText);
+        document.getElementsByTagName('ul')[0].appendChild(newLi);
+        document.getElementsByTagName('ul')[0].appendChild(newLi.cloneNode(true));
+        document.getElementsByTagName('ul')[0].appendChild(newLi.cloneNode(false));
+      }
+    </script>
+    <script type="text/javascript" src="scripts/classes.js"></script>
+    <script type="text/javascript" src="scripts/database.js"></script>
+  </body>
+</html>
