@@ -1,44 +1,52 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" type="text/css" href="layout.css">
   </head>
-  <body class="container"s>
-    <article>
+  <body id="list-box" class="container">
+    <article id="show0" class="row" style="visibility: hidden;">
 <!-- HERE IS WHERE THE DATE OF THE SHOW WILL GO -->
-      <section>
-        <div>
+      <section class="offset-by-one two columns">
+        <p style="font-size: 12pt; text-align: center;">
         <!-- MONTH -->
-        </div>
-        <div>
-        <!-- DAY NUMBER -->
-        </div>
-        <div>
+        OCT
+        </p>
+        <p style="font-size: 24pt; text-align: center;">
+        5
+        </p>
+        <p style="font-size: 12pt; text-align: center;">
         <!-- YEAR -->
-        </div>
+        2014
+        </p>
       </section>
 <!-- BANDS, TIME, AND PRICE WILL GO HERE  -->
-      <section>
-        <div>
+      <section class="five columns">
+        <h1 style="font-size: 16pt; text-align: left;">
         <!-- HEADLINER BAND -->
-        </div>
-        <div>
+        Headliner
+        </h1>
+        <h2 style="font-size: 14pt; text-align: left;">
         <!-- SUB-BAND #1 -->
-        </div>
-        <div>
+        Subband1
+        </h2>
+        <h2 style="font-size: 12pt; text-align: left;">
         <!-- SUB BAND #2 -->
-        </div>
-        <div>
-        <!-- DOOR TIME -->
-        </div>
-        <div>
-        <!-- SHOW COST -->
-        </div>
+        Subband2
+        </h2>
+        <p style="font-size: 10pt; text-align: left;">
+        Time, price<!-- DOOR TIME -->
+        </p>
       </section>
 <!-- TICKET BUTTON GOES HERE  -->
-      <section>
-        <button>Buy Tickets</button>
+      <section class="two columns">
+        <p style="padding-top: 3em"><a href="buy-tix(1).html?show=show1">Buy Tickets</a></p>
       </section>
 
     </article>
+    <script type="text/javascript" src="scripts/classes.js"></script>
+    <script type="text/javascript" src="scripts/database.js"></script>
+    <script type="text/javascript">
+      window.addEventListener("load", sloppyShows.display("list-box"));
+    </script>
   </body>
 </html>
