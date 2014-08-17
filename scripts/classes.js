@@ -33,7 +33,8 @@ function Show(headLiner, subBand1, subBand2, dateTime, price) {
     linkBox.children[0].children[0].href = "buy-tix.html?show=show" + linkIndex;
   };
 
-  this.displayLarge = function (parentID) {//on the ticket sales page, display more info
+  this.displayLarge = function () {//on the ticket sales page, display more info
+    var parentID = "";
     return;
   };
 }
@@ -43,37 +44,37 @@ function compareShows(show1, show2) {
 }
 
 function ShowList() {//maybe add a cleaner to not display shows with dates before today
-  this.showArray = [];
+  var showArray = [];
 
   this.addShow = function (show) {//also keeps it sorted
-    this.showArray.push(show);
-    this.showArray.sort(compareShows);
+    showArray.push(show);
+    showArray.sort(compareShows);
   };
 
-  this.display = function (parentID) {//Fills the parent with a bunch of divs for each
+  this.display = function () {//Fills the parent with a bunch of divs for each
+    var parentID = "list-box";
     var parentElement = document.getElementById(parentID);
     var templateElement = document.getElementById("show0"); //linked to html
-    if (this.showArray.length > 0) {
-      this.showArray[0].displaySmall("show0", 0);//replace the template div with info from first show
+    if (showArray.length > 0) {
+      showArray[0].displaySmall("show0", 0);//replace the template div with info from first show
       templateElement.style.visibility = "visible";
     }
     var newDivID = "";
     var newElement;
     var i;
-    for (i = 1; i < this.showArray.length; i++) {//create elements based on first show for all subsequent shows, fill them in
+    for (i = 1; i < showArray.length; i++) {//create elements based on first show for all subsequent shows, fill them in
       newDivID = "show" + i;
       newElement = templateElement.cloneNode(true);
       newElement.id = newDivID;
       parentElement.appendChild(newElement);
-      this.showArray[i].displaySmall(newDivID, i);
-      newElement.style.visibility = "visible";
+      showArray[i].displaySmall(newDivID, i);
     }
   };
 
   this.checkAvailability = function (date) {
     var i;
-    for (i = 0; i < this.showArray.length; i++) {
-      if (this.showArray[i].dateTime.dateString() === date.dateString()) {
+    for (i = 0; i < showArray.length; i++) {
+      if (showArray[i].dateTime.dateString() === date.dateString()) {
         return false;
       }
     }
