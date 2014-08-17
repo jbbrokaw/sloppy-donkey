@@ -5,12 +5,12 @@ function Band(name, description) {
   this.description = description;
 }
 
-function Show(headLiner, subBand1, subBand2, dateTime, price) {
-  this.headLiner = headLiner;
-  this.subBand1 = subBand1;
-  this.subBand2 = subBand2;
-  this.dateTime = dateTime;
-  this.price = price;
+function Show(headLinerIn, subBand1In, subBand2In, dateTimeIn, priceIn) {
+  var headLiner = headLinerIn;
+  var subBand1 = subBand1In;
+  var subBand2 = subBand2In;
+  var dateTime = dateTimeIn;
+  var price = priceIn;
   var monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug",
                     "Sep", "Oct", "Nov", "Dec"];
 
@@ -19,28 +19,41 @@ function Show(headLiner, subBand1, subBand2, dateTime, price) {
     //parentElement has three children, all <section>'s: date, info, and <p>link
     var dateBox = parentElement.children[0];
     //dateBox has three children, all <p>'s: month, date, year
-    dateBox.children[0].textContent = monthNames[this.dateTime.getMonth()];
-    dateBox.children[1].textContent = String(this.dateTime.getDate());
-    dateBox.children[2].textContent = String(this.dateTime.getFullYear());
+    dateBox.children[0].textContent = monthNames[dateTime.getMonth()];
+    dateBox.children[1].textContent = String(dateTime.getDate());
+    dateBox.children[2].textContent = String(dateTime.getFullYear());
     var infoBox = parentElement.children[1];
     //infoBox has 4 children, <h1> headliner, 2x <h2> subbands, and <p> date, time
-    infoBox.children[0].textContent = this.headLiner.name;
-    infoBox.children[1].textContent = this.subBand1.name;
-    infoBox.children[2].textContent = this.subBand2.name;
-    infoBox.children[3].textContent = (this.dateTime.getHours() - 12) + " pm, $" + this.price;
+    infoBox.children[0].textContent = headLiner.name;
+    infoBox.children[1].textContent = subBand1.name;
+    infoBox.children[2].textContent = subBand2.name;
+    infoBox.children[3].textContent = (dateTime.getHours() - 12) + " pm, $" + price;
     var linkBox = parentElement.children[2];
     //the link box has exactly 1 child, a <p> with exactly 1 <a> in it.
     linkBox.children[0].children[0].href = "buy-tix.html?show=show" + linkIndex;
   };
 
   this.displayLarge = function () {//on the ticket sales page, display more info
-    var parentID = "";
-    return;
+    document.getElementById("headliner-name").textContent = headLiner.name;
+    document.getElementById("headliner-description").textContent = headLiner.description;
+    document.getElementById("subband1-name").textContent = subBand1.name;
+    document.getElementById("subband1-description").textContent = subBand1.description;
+    document.getElementById("subband2-name").textContent = subBand2.name;
+    document.getElementById("subband2-description").textContent = subBand2.description;
+    var dateTimeElement = document.getElementById("date-time");
+    var dateTimeString = (dateTime.getHours() - 12) + " pm on " +
+              monthNames[dateTime.getMonth()] + " " + dateTime.getDate();
+    dateTimeElement.textContent = dateTimeString;
+    document.getElementById("price").textContent = "$" + price;
+  };
+
+  this.getDateTime = function () {
+    return dateTime.valueOf();
   };
 }
 
 function compareShows(show1, show2) {
-  return show1.dateTime.valueOf() - show2.dateTime.valueOf();
+  return show1.getDateTime() - show2.getDateTime();
 }
 
 function ShowList() {//maybe add a cleaner to not display shows with dates before today
@@ -79,6 +92,10 @@ function ShowList() {//maybe add a cleaner to not display shows with dates befor
       }
     }
     return true;
+  };
+
+  this.displayLarge = function (showIndex) {
+    showArray[showIndex].displayLarge();
   };
 }
 
