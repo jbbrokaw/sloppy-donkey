@@ -10,3 +10,8 @@ if (passedString.length > 0) {
 } else {
   alert("bad variable passed in URL");
 }
+
+var administrator = new PurchasingAdmin();
+
+var purchaseButtonElement = document.getElementById("purchase");
+purchaseButtonElement.addEventListener("click", administrator.getData);

@@ -53,16 +53,25 @@
           <h1>TICKET BUYING FORM</h1>
           <form>
             <label for="customer-name">Name:</label>
-            <input id="customer-name" type="text" placeholder="First Last" /><br>
+            <input name="customer-name" id="customer-name" type="text" placeholder="First Last" /><br>
             <label for="customer-address">Street Address:</label>
-            <input id="customer-address" type="text" placeholder="123 1st Ave N Apt 1" /><br>
+            <input name="customer-address" id="customer-address" type="text" placeholder="123 1st Ave N Apt 1" /><br>
             <label for="customer-city">City:</label>
-            <input id="customer-city" type="text" placeholder="Seattle" /><br>
+            <input name="customer-city" id="customer-city" type="text" placeholder="Seattle" /><br>
             <label for="customer-state">State:</label>
-            <input id="customer-state" type="text" placeholder="WA" /><br>
+            <input name="customer-state" id="customer-state" type="text" placeholder="WA" /><br>
+            <label for="customer-zip">Zip:</label>
+            <input name="customer-state" id="customer-zip" type="text" size=7 placeholder="99999" /><br>
             <label for="customer-cc">Credit Card No.:</label>
-            <input id="customer-cc" type="text" placeholder="0000-0000-0000-0000" />
+            <input name="customer-cc" id="customer-cc" type="text" size=25 placeholder="0000-0000-0000-0000" /><br>
+            <label for="customer-email">Email:</label>
+            <input name="customer-email" id="customer-email" type="email" placeholder="user@domain.com" />
+            <button type="button" id="purchase">Purchase</button>
           </form>
+        </div>
+        <div id="receipt" class="sixteen columns" style="display: none">
+          <p> Thank you, <span id="customer">CUSTOMER</span>, for your purchase. We have received your purchase and will email your tickets and a receipt shortly. Please also print out this page for your records.</p>
+          <p> For now, please return to our <a href="index.html">home page</a></p>
         </div>
 
         <div class="sixteen columns" id="nav-bar">
