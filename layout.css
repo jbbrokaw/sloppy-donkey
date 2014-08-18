@@ -246,6 +246,7 @@ body {
 }
 
 header {
+  padding-top: 10px;
   background-color: #FFFFFF;
 }
 
@@ -256,6 +257,7 @@ nav {
 article {
   background-color: #FFFFFF;
   padding-top: 15px;
+  padding-bottom: 20px;
 }
 
 aside {
@@ -265,6 +267,12 @@ aside {
 
 div {
   text-align: left;
+}
+
+footer {
+  text-align: center;
+  color: #FFFFFF;
+  background-color: #000000;
 }
 
 #banner {
