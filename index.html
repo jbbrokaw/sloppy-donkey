@@ -1,72 +1,63 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>The Sloppy Donkey</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="skeleton.css">
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
+    <link rel="stylesheet" type="text/css" href="modules.css">
+    <link rel="stylesheet" type="text/css" href="states.css">
     <link rel="stylesheet" type="text/css" href="theme.css">
   </head>
 
-  <body>
-    <div class="container">
+  <body class="container">
+    <header class="sixteen columns clearfix">
 
       <div class="two columns" id="logo">
-        <a href="index.html"><img src="images/logo.gif"></a>
+          <a href="index.html"><img src="images/logo.gif" alt="Sloppy"></a>
       </div>
 
-      <div class="twelve columns" id="banner">
+      <div class="twelve columns clearfix" id="banner">
         <h1>The Sloppy Donkey</h1>
         <h2>Where it's OK to make an ass of yourself!</h2>
         <h3>In Seattle's bustling SLU neighborhood at 511 N Boren</h3>
       </div>
 
-      <div class="two columns" id="socialmedia">
+      <div class="one columns clearfix" id="socialmedia">
         <a href="http://facebook.com/sloppydonkey"><img src="images/facebook.gif"></a>
         <p><a href="http://plus.google.com/sloppydonkey"><img src="images/google-plus.png" height="40" width="40"></a></p>
         <p><a href="http://twitter.com/sloppydonkey"><img src="images/twitter.gif"></a></p>
       </div>
+    </header>
 
-        <div class="sixteen columns" id="nav-bar">
-          <a href="index.html">Home</a> ||
-          <a href="about.html">About Us</a> ||
-          <a href="booking.html">Booking</a> ||
-          <a href="buy-tix.html">Buy Tickets</a>||
-          <a href="merch.html">Merch</a> ||
-          <a href="upcomingshows.html">Upcoming Shows</a>
-        </div>
+  <nav class="sixteen columns clearfix">
+    <ul class="eleven columns clearfix">
+      <li><a href="index.html" class="current">Home</a></li>
+      <li><a href="upcomingshows.html">Upcoming Shows</a></li>
+      <li><a href="merch.html">Merch</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <button class="four columns clearfix"><a href="booking.html">BOOK YOUR BAND</a></button>
+  </nav>
 
-        <div class="eleven columns" id="main content">
-          <img src="images/band.jpg">
-          <h3>Lorizzle black dolizzle amizzle, izzle fo shizzle my nizzle elizzle. Crackalackin sapien velit, pizzle volutpat, gangsta quizzle, gravida vizzle, arcu. Pellentesque eget tortizzle. Yo erizzle. Fusce izzle owned dapibus turpis tempizzle check it out. Mauris gangster own yo' get down get down da bomb. Go to hizzle izzle tortizzle. Pellentesque eleifend rhoncizzle brizzle. In hac things its fo rizzle dictumst. Donec dapibizzle. Shit tellus check out this, we gonna chung own yo', fo pimpin', eleifend vitae, nunc. Nizzle suscipizzle. Dope sempizzle velit sizzle away.</h3>
-        </div>
+    <article class="sixteen columns maincontent">
+      <section class="eleven columns clearfix">
+      <img src="images/band.jpg">
+      <p>Lorizzle black dolizzle amizzle, izzle fo shizzle my nizzle elizzle. Crackalackin sapien velit, pizzle volutpat, gangsta quizzle, gravida vizzle, arcu. Pellentesque eget tortizzle. Yo erizzle. Fusce izzle owned dapibus turpis tempizzle check it out. Mauris gangster own yo' get down get down da bomb. Go to hizzle izzle tortizzle. Pellentesque eleifend rhoncizzle brizzle. In hac things its fo rizzle dictumst. Donec dapibizzle. Shit tellus check out this, we gonna chung own yo', fo pimpin', eleifend vitae, nunc. Nizzle suscipizzle. Dope sempizzle velit sizzle away.</p>
+      </section>
+      <aside class="three columns clearfix">
+        <img src="images/map.jpg" width="220">
+        <h4>Contact:</h4>
+        <p>The Sloppy Donkey, 511 Boren Avenue N, Seattle, WA, 98109</p>
+        <h4>Phone:</h4>
+        <p>(206) 123-4567</p>
+        <h4>Email:</h4>
+        <p><a href="mailto:donkey@sloppydonkey.com">donkey@sloppydonkey.com</a></p>
+      </aside>
+    </article>
 
-        <div class="four columns" id="aside">
-          <h1>Item 1</h1>
-          <p>Fusce izzle owned dapibus turpis tempizzle check it out. Mauris gangster own yo' get down get down da bomb.</p>
-          <h1>Item 2</h1>
-          <p>Fusce izzle owned dapibus turpis tempizzle check it out. Mauris gangster own yo' get down get down da bomb.</p>
-          <h1>Item 3</h1>
-          <p>Fusce izzle owned dapibus turpis tempizzle check it out. Mauris gangster own yo' get down get down da bomb.</p>
-        </div>
+    <footer class="sixteen columns">
+      <p>&copy; JSS Enterprises. All rights reserved.</p>
+    </footer>
 
-        <div class="sixteen columns" id="nav-bar">
-          <a href="index.html">Home</a> ||
-          <a href="about.html">About Us</a> ||
-          <a href="booking.html">Booking</a> ||
-          <a href="buy-tix.html">Buy Tickets</a>||
-          <a href="merch.html">Merch</a> ||
-          <a href="upcomingshows.html">Upcoming Shows</a>
-        </div>
-
-        <div class="sixteen columns" id="footer">
-          <img src="images/map.jpg" height="200" width="200">
-          <h1>Contact: The Sloppy Donkey, 511 Boren Avenue N, Seattle, WA, 98109</h1>
-          <h1>Phone: (206) 123-4567 | Email: donkey@sloppydonkey.com</h1>
-          <h1>Social Media: Facebook | Google+ | Twitter
-        </div>
-
-      </div>
-    </div>
   </body>
 </html>
