@@ -31,3 +31,40 @@ section button {
 #booking-form h1 {
   text-align: center;
 }
+
+.show {
+  font-family: serif;
+  text-align: left;
+}
+
+.show__month {
+  padding-top: 2em;
+  font-size: 12pt;
+  text-align: center;
+}
+
+.show__day {
+  font-size: 24pt;
+  text-align: center;
+}
+
+.show__year {
+  font-size: 12pt;
+  text-align: center;
+}
+
+.show__headliner {
+  font-size: 16pt;
+}
+
+.show__subband1 {
+  font-size: 14pt;
+}
+
+.show__subband2 {
+  font-size: 12pt;
+}
+
+.show__time-price {
+  font-size: 10pt;
+}
