@@ -3,7 +3,7 @@
 
   <head>
     <title>The Sloppy Donkey: Booking</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
+    <link rel="stylesheet" type="text/css" href="base.css">
     <link rel="stylesheet" type="text/css" href="skeleton.css">
     <link rel="stylesheet" type="text/css" href="theme.css">
   </head>
@@ -37,14 +37,30 @@
         </div>
 
         <div class="seven columns" id="about-content">
-            <h1>Interested in booking a gig at The Sloppy Donkey?</h1>
-            <h3>Instructions/information</h3>
+          <h1>Interested in booking a gig at The Sloppy Donkey?</h1>
+          <h3>Instructions/Information</h3>
+          <p>Your friends do not get in for free.</p>
         </div>
 
         <div class="seven columns" id="about-content">
-            <h1>BOOKING FORM</h1>
+          <h1>BOOKING FORM</h1>
+          <form>
+            <label for="band-name">Band Name:</label>
+            <input name="band-name" id="band-name" type="text" placeholder="The Beatles" /><br>
+            <label for="band-description">Describe your music:</label>
+            <textarea name="band-description" id="band-description" placeholder="More popular than Jesus"></textarea><br>
+            <label for="date-request">Preferred date:</label>
+            <input name="date-request" id="date-request" type="date" /><br>
+            <p id="bad-date" style="display: none">That date is booked</p>
+            <label for="email">Email:</label>
+            <input name="email" id="email" type="email" />
+            <button type="button" id="submit">Submit</button>
+          </form>
         </div>
-
+        <div id="receipt" class="sixteen columns" style="display: none">
+          <p> Thank you <span id="requester">BAND</span> for your interest. We have received your request and will respond shortly.</p>
+          <p> For now, please return to our <a href="index.html">home page</a></p>
+        </div>
         <div class="sixteen columns" id="nav-bar">
           <a href="index.html">Home</a> ||
           <a href="about.html">About Us</a> ||
@@ -63,5 +79,8 @@
 
       </div>
     </div>
+    <script type="text/javascript" src="scripts/classes.js"></script>
+    <script type="text/javascript" src="scripts/database.js"></script>
+    <script type="text/javascript" src="scripts/booking.js"></script>
   </body>
 </html>

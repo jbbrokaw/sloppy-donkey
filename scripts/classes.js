@@ -50,6 +50,10 @@ function Show(headLinerIn, subBand1In, subBand2In, dateTimeIn, priceIn) {
   this.getDateTime = function () {
     return dateTime.valueOf();
   };
+
+  this.getDateString = function () {
+    return dateTime.toDateString();
+  };
 }
 
 function compareShows(show1, show2) {
@@ -68,26 +72,32 @@ function ShowList() {//maybe add a cleaner to not display shows with dates befor
     var parentID = "list-box";
     var parentElement = document.getElementById(parentID);
     var templateElement = document.getElementById("show0"); //linked to html
-    if (showArray.length > 0) {
-      showArray[0].displaySmall("show0", 0);//replace the template div with info from first show
+    var i = 0;
+    var today = new Date();
+    while ((showArray[i].getDateTime() < today.valueOf()) && (i < showArray.length)) {
+      i++;
+    } //Do not display past shows. Maintain show numbers, though
+    if (i < showArray.length) {
+      showArray[i].displaySmall("show0", i);//replace the template div with info from first show
       templateElement.style.visibility = "visible";
     }
     var newDivID = "";
     var newElement;
-    var i;
-    for (i = 1; i < showArray.length; i++) {//create elements based on first show for all subsequent shows, fill them in
-      newDivID = "show" + i;
+    var n;
+    /*Now we list the next 9 (max) shows in the list*/
+    for (n = i + 1; (n < showArray.length) && ((n - i) < 10); n++) {//create elements based on first show for all subsequent shows, fill them in
+      newDivID = "show" + n;
       newElement = templateElement.cloneNode(true);
       newElement.id = newDivID;
       parentElement.appendChild(newElement);
-      showArray[i].displaySmall(newDivID, i);
+      showArray[n].displaySmall(newDivID, n);
     }
   };
 
   this.checkAvailability = function (date) {
     var i;
     for (i = 0; i < showArray.length; i++) {
-      if (showArray[i].dateTime.dateString() === date.dateString()) {
+      if (showArray[i].getDateString() === date.toDateString()) {
         return false;
       }
     }
@@ -99,21 +109,54 @@ function ShowList() {//maybe add a cleaner to not display shows with dates befor
   };
 }
 
-function Admin(inputFormID) {
-  this.inputForm = document.getElementById(inputFormID);
+function BookingAdmin() {
 
   this.getData = function () {
-    //read in data
-    return;
+    var bandName = document.getElementById("band-name").value;
+    var bandDescription = document.getElementById("band-description").value;
+    var requestedDate = new Date(document.getElementById("date-request").value + " PDT");
+    if (!sloppyShows.checkAvailability(requestedDate)) {
+      alert("Please request an available date");
+      return;
+    }
+    var email = document.getElementById("email").value;
+    console.log(new Band(bandName, bandDescription));
+    requestedDate.setHours(20);
+    console.log(requestedDate);
+    console.log(email);
+    var receiptElement = document.getElementById("receipt");
+    var requesterNameElement = document.getElementById("requester");
+    requesterNameElement.textContent = bandName;
+    receiptElement.style.display = "block";
+
   };
 
-  this.validateData = function () {
-    //check whether data is valid
-    return;
+  this.validateBookingDate = function () {
+    var requestedDate = new Date(document.getElementById("date-request").value + " PDT");
+    var messageElement = document.getElementById("bad-date");
+    if (!sloppyShows.checkAvailability(requestedDate)) {
+      messageElement.style.display = "block";
+    } else {
+      messageElement.style.display = "none";
+    }
   };
+}
 
-  this.sendData = function () {
-    //write data out
-    return;
+function PurchasingAdmin() {
+
+  this.getData = function () {
+    var customer = {}
+    customer.name = document.getElementById("customer-name").value;
+    customer.address = document.getElementById("customer-address").value;
+    customer.city = document.getElementById("customer-city").value;
+    customer.state = document.getElementById("customer-state").value;
+    customer.zip = document.getElementById("customer-zip").value;
+    customer.creditCard = document.getElementById("customer-cc").value;
+    customer.Email = document.getElementById("customer-email").value;
+    console.log(customer);
+    var receiptElement = document.getElementById("receipt");
+    var customerNameElement = document.getElementById("customer");
+    customerNameElement.textContent = customer.name;
+    receiptElement.style.display = "block";
   };
 }
