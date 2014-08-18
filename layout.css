@@ -243,9 +243,11 @@
 
 body {
   background-color: #bedede;
+    font-family: Verdana, sans-serif;
 }
 
 h1 {
+  color: #d6532d;
   display: block;
   font-size: 2em;
   font-weight: bold;
@@ -253,6 +255,7 @@ h1 {
 }
 
 h2 {
+  color: #d6532d;
   display: block;
   font-size: 1.5em;
   margin: 0.83em 0em 0.83em 0em;
@@ -260,6 +263,7 @@ h2 {
 }
 
 h3 {
+  color: #d6532d;
   display: block;
   font-size: 1.17em;
   margin: 1em 0em 1em 0em;
@@ -267,7 +271,7 @@ h3 {
 }
 
 h4 {
-  font-size: 16px;
+  color: #d6532d;font-size: 16px;
   display: block;
   margin: 1.33em 0em 1.33em 0em;
   font-weight: bold;
