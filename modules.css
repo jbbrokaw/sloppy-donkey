@@ -1,5 +1,7 @@
 nav {
   height: 30px;
+  display: inline;
+  padding-bottom: 10px;
 }
 
 nav ul {
@@ -16,8 +18,13 @@ nav li a {
   color: #000000;
 }
 
-/* I THINK THIS IS NEEDING TO BE UPDATED VIA EVENTS IN JS */
-nav li a:hover, nav li a.current {
-  color: #DEB887;
+article img{
+  padding-left: 15px;
+}
+
+button nav {
+  align: center;
+  padding: none;
+  margin: none;
 }
 
