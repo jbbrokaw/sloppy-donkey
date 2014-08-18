@@ -336,6 +336,29 @@ footer {
   background-color: #000000;
 }
 
+form {
+  float: left;
+  width: 300px;
+  clear: both;
+}
+label{
+  float: left;
+  width: 150px;
+  margin-bottom: 10px;
+}
+input{
+  float: left;
+  width: 150px;
+  margin-bottom: 10px;
+}
+
+#buy-form {
+  padding-left: 20px;
+}
+
+#booking-form {
+  padding-left: 20px;
+}
 
 #banner {
   margin-left: 15px;
