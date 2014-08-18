@@ -23,8 +23,19 @@ article img{
 }
 
 button nav {
-  align: center;
   padding: none;
   margin: none;
+}
+
+aside img {
+  padding-left: 30px;
+}
+
+aside h4 {
+  padding-left: 30px;
+}
+
+aside p {
+  padding-left: 30px;
 }
 
