@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html>
-
   <head>
     <title>The Sloppy Donkey: Upcoming Shows</title>
-    <link rel="stylesheet" type="text/css" href="reset.css">
-    <link rel="stylesheet" type="text/css" href="skeleton.css">
+    <link rel="stylesheet" type="text/css" href="base.css">
+    <link rel="stylesheet" type="text/css" href="layout.css">
+    <link rel="stylesheet" type="text/css" href="modules.css">
+    <link rel="stylesheet" type="text/css" href="states.css">
     <link rel="stylesheet" type="text/css" href="theme.css">
   </head>
 
-  <body>
-    <div class="container">
+<body class="container">
+  <header class="sixteen columns clearfix">
+    <div class="two columns" id="logo">
+        <a href="index.html"><img src="images/logo.gif" alt="Sloppy"></a>
+    </div>
 
-      <div class="two columns" id="logo">
-        <a href="index.html"><img src="images/logo.gif"></a>
-      </div>
+    <div class="twelve columns clearfix" id="banner">
+      <h1>The Sloppy Donkey</h1>
+      <h2>Where it's OK to make an ass of yourself!</h2>
+      <h3>In Seattle's bustling SLU neighborhood at 511 N Boren</h3>
+    </div>
 
-      <div class="twelve columns" id="banner">
-        <h1>The Sloppy Donkey</h1>
-        <h2>Where it's OK to make an ass of yourself!</h2>
-        <h3>In Seattle's bustling SLU neighborhood at 511 N Boren</h3>
-      </div>
+    <div class="one columns clearfix" id="socialmedia">
+      <a href="http://facebook.com/sloppydonkey"><img src="images/facebook.gif"></a>
+      <p><a href="http://plus.google.com/sloppydonkey"><img src="images/google-plus.png" height="40" width="40"></a></p>
+      <p><a href="http://twitter.com/sloppydonkey"><img src="images/twitter.gif"></a></p>
+    </div>
+  </header>
 
-      <div class="two columns" id="socialmedia">
-        <a href="http://facebook.com/sloppydonkey"><img src="images/facebook.gif"></a>
-        <p><a href="http://plus.google.com/sloppydonkey"><img src="images/google-plus.png" height="40" width="40"></a></p>
-        <p><a href="http://twitter.com/sloppydonkey"><img src="images/twitter.gif"></a></p>
-      </div>
+  <nav class="sixteen columns clearfix">
+    <ul class="eleven columns clearfix">
+      <li><a href="home.html">Home</a></li>
+      <li><a href="upcomingshows.html">Upcoming Shows</a></li>
+      <li><a href="merch.html">Merch</a></li>
+      <li><a href="about.html">About Us</a></li>
+    </ul>
+    <button class="four columns clearfix"><a href="booking.html">BOOK YOUR BAND</a></button>
+  </nav>
 
-        <div class="sixteen columns" id="nav-bar">
-          <a href="index.html">Home</a> ||
-          <a href="about.html">About Us</a> ||
-          <a href="booking.html">Booking</a> ||
-          <a href="buy-tix.html">Buy Tickets</a>||
-          <a href="merch.html">Merch</a> ||
-          <a href="upcomingshows.html">Upcoming Shows</a>
-        </div>
 
         <div id="list-box" class="fifteen columns" id="about-content">
           <article id="show0" class="row" style="visibility: hidden;">
@@ -75,23 +78,14 @@
               <p style="padding-top: 3em"><a href="buy-tix(1).html?show=show1">Buy Tickets</a></p>
             </section>
 
-          </article>
-        </div>
-        <div class="sixteen columns" id="nav-bar">
-          <a href="index.html">Home</a> ||
-          <a href="about.html">About Us</a> ||
-          <a href="booking.html">Booking</a> ||
-          <a href="buy-tix.html">Buy Tickets</a>||
-          <a href="merch.html">Merch</a> ||
-          <a href="upcomingshows.html">Upcoming Shows</a>
+
+        </article>
+
         </div>
 
-        <div class="sixteen columns" id="footer">
-          <img src="images/map.jpg" height="200" width="200">
-          <h1>Contact: The Sloppy Donkey, 511 Boren Avenue N, Seattle, WA, 98109</h1>
-          <h1>Phone: (206) 123-4567 | Email: donkey@sloppydonkey.com</h1>
-          <h1>Social Media: Facebook | Google+ | Twitter
-        </div>
+    <footer class="sixteen columns">
+      <p>&copy; JSS Enterprises. All rights reserved.</p>
+    </footer>
 
       </div>
     </div>
